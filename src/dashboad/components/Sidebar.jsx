@@ -3,7 +3,7 @@ import logo from "/logo.svg"
 
 
 const Sidebar = () => {
-const role = "admin";
+const role = "instructor";
  
     return (
         <aside className=" w-dashboard-md p-10 h-screen fixed top-0 bottom-0">
@@ -19,9 +19,11 @@ const role = "admin";
                     <li className="mt-4 font-bold"><NavLink to="/dashboard/manage-users" className={({isActive}) => isActive ? "d-active flex gap-2 text-[16px] items-center": "uppercase flex gap-2 text-[16px] items-center"}><span>Manage Users</span></NavLink></li>
                     </>
                     :
-                    <>
-                    
-                    </>
+                    role === "instructor" ? <>
+                    <li className="mt-4 font-bold"><NavLink to="/dashboard/add-class" className={({isActive}) => isActive ? "d-active flex gap-2 text-[16px] items-center": "uppercase flex gap-2 text-[16px] items-center"}><span>Add Class</span></NavLink></li>
+                    <li className="mt-4 font-bold"><NavLink to="/dashboard/my-classes" className={({isActive}) => isActive ? "d-active flex gap-2 text-[16px] items-center": "uppercase flex gap-2 text-[16px] items-center"}><span>My Classes</span></NavLink></li>
+                    </> : 
+                    <></>
                 }
                 
                
