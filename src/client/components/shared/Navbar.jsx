@@ -41,15 +41,15 @@ const Navbar = () => {
                         <NavLink onClick={() => setToggle(!toggle)} to="/dashboard" className={({ isActive }) => isActive ? "text-main" : ""}> Dashboard</NavLink>
                     </li>
                     
-                    <button onClick={() => setIsdark(!isDark)}> 
-                       {isDark ? <BsFillMoonStarsFill/> : <BsFillSunFill/>}
+                    <button> 
+                       {isDark ? <BsFillSunFill className="cursor-pointer" onClick={() => setIsdark(false)} /> : <BsFillMoonStarsFill className="cursor-pointer" onClick={() => setIsdark(true)}/>}
                     </button>
                      <li>{
                             user?.photoURL ? <img className="w-[35px] h-[35px] rounded-full cursor-pointer" src={user?.photoURL} title={user.displayName} alt="" /> : ""
                         }
                     </li>
                     <li>{
-                            user ? <button onClick={logOut} className="border-[#00abe4] text-[#00abe4] px-4 py-2 flex items-center gap-2  border rounded p-3"><AiOutlineLogin/> LogOut</button> : <button><Link className="flex items-center gap-2 border rounded p-3 border-[#00abe4] text-[#00abe4]" to="/login"> <AiOutlineLogin/>  Login</Link></button>
+                            user ? <button onClick={logOut} className=" text-main px-4 py-2 flex items-center gap-2  rounded p-3"><AiOutlineLogin/> LogOut</button> : <button><Link className="flex items-center gap-2 p-3  text-main" to="/login"> <AiOutlineLogin/>  Login</Link></button>
                         }
                     </li>
                     

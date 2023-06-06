@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { AiFillEyeInvisible,AiFillEye  } from "react-icons/ai";
 import useTitle from "../hooks/useTitle";
 import { useAuth } from '../context/AuthProvider';
+import { useForm } from 'react-hook-form';
+
 
 
 
@@ -17,8 +19,26 @@ const Login = () => {
     const from = location.state?.from?.pathname || '/'
     const {signIn, signInWithGoogle} = useAuth()
     const [error, setError] = useState(null)
+    const { register, handleSubmit, } = useForm();
 
-    const hendleForm = (e) => {
+    const hendleForm = (data) => {
+        const form = e.target
+        const email = form.email.value;
+        const password = form.password.value
+        setError(null)
+
+        if(!email || !password) {
+            setError("Cannot leave any field empty")
+            return
+        } 
+        signIn(email, password) 
+        .then (() => {
+            navigate(from, { replace: true })
+            form.reset()
+        })
+        .catch(error => {
+            setError(error.message)  
+        })
        
         }      
         
@@ -45,16 +65,16 @@ const Login = () => {
 
                 <section className=' p-[25px] mt-10 ml-auto md:w-1/2'>
                 <h2 className='text-3xl font-bold'>Login.</h2>
-                <p className='mt-[8px] '>Don't Have An Account? <Link to="/register" className='text-[#1f32dd]'>Create New Account</Link></p>
-                <form onSubmit={hendleForm}>
+                <p className='mt-[8px] '>Don't Have An Account? <Link to="/register" className='text-main'>Create New Account</Link></p>
+                <form onSubmit={handleSubmit(hendleForm)}>
                     <div className='flex flex-col my-4'>
                         <label htmlFor="email" className='my-2 text-[17px]'>Email</label>
-                        <input type="email" name="email" id="email" className='border-b-2 rounded py-2 px-4 outline-none text-base' autoComplete='off' placeholder='email' required/>
+                        <input type="email" {...register("email", { required: true })} id="email" className='border-b-2 rounded py-2 px-4 outline-none text-base' autoComplete='off' placeholder='email' required/>
                     </div>
                     <div className='my-4'>
                         <label htmlFor="password" className='my-2 text-[17px] block'>Password</label>
                         <div className='relative w-full'>
-                        <input type={showPassword ? "text" : "password"} name="password" id="password" className='border-b-2 w-full rounded py-2 px-4 outline-none text-base' autoComplete='off' placeholder='password' />
+                        <input type={showPassword ? "text" : "password"} {...register("password", { required: true })} id="password" className='border-b-2 w-full rounded py-2 px-4 outline-none text-base' autoComplete='off' placeholder='password' />
                         <span className='absolute top-3 right-3'>
                             {
                                showPassword ? <AiFillEyeInvisible className='cursor-pointer' onClick={() => setShowPassword(!showPassword)}/> : <AiFillEye className='cursor-pointer' onClick={() => setShowPassword(!showPassword)}/>
