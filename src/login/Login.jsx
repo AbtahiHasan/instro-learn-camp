@@ -22,9 +22,7 @@ const Login = () => {
     const { register, handleSubmit, } = useForm();
 
     const hendleForm = (data) => {
-        const form = e.target
-        const email = form.email.value;
-        const password = form.password.value
+        console.log(data)
         setError(null)
 
         if(!email || !password) {
