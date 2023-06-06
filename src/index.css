@@ -5,3 +5,7 @@
 .container {
     @apply max-w-[1240px] mx-auto px-3
 }
+
+.d-active {
+    @apply text-main font-bold uppercase duration-300
+}
