@@ -17,7 +17,7 @@ const Navbar = () => {
     const [isDark, setIsdark] = useState(null)
     useDark(isDark)
     return (
-        <nav className="dark:bg-dark-bg dark:text-white">
+        <nav className="shadow-md">
             <div className="container flex justify-between py-4">
             <Link className="flex items-center gap-1">
             <img className="h-[50px]" src={logo} alt="" /> <h3 className="text-2xl font-bold">InstroLearnCamp</h3>
@@ -27,7 +27,7 @@ const Navbar = () => {
                        toggle ? <IoMdClose className="cursor-pointer" onClick={() => setToggle(!toggle)} /> : <HiOutlineMenuAlt2 className="cursor-pointer"  onClick={() => setToggle(!toggle)} />
                     }
                 </span>
-                <ul className={`flex items-center duration-200 z-50 flex-col py-5 lg:p-0 text-white bg-opacity-80 lg:text-black top-14 bg-black lg:bg-transparent w-full lg:w-auto lg:flex-row gap-3 absolute lg:static ${toggle ? "left-0" : "-left-full"}`}>
+                <ul className={`flex items-center duration-200 z-50 flex-col py-5 lg:p-0 bg-opacity-80 top-14 bg-black lg:bg-transparent w-full lg:w-auto lg:flex-row gap-3 absolute lg:static ${toggle ? "left-0" : "-left-full"}`}>
                     <li>
                         <NavLink onClick={() => setToggle(!toggle)} to="/" className={({ isActive }) => isActive ? "text-main" : ""}>Home</NavLink>
                     </li>
@@ -41,10 +41,6 @@ const Navbar = () => {
                         <NavLink onClick={() => setToggle(!toggle)} to="/dashboard" className={({ isActive }) => isActive ? "text-main" : ""}> Dashboard</NavLink>
                     </li>
                     
-
-                   
-                   
-             
                     <button onClick={() => setIsdark(!isDark)}> 
                        {isDark ? <BsFillMoonStarsFill/> : <BsFillSunFill/>}
                     </button>

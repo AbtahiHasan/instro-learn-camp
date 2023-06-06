@@ -8,11 +8,13 @@ export default {
     themes: ["light", "dark"],
   },
   theme: {
-    extend: {},
-    colors: {
-      'dark-bg': '#2C394B',
-      'main': '#F0582C'
-    }
+    extend: {
+      colors: {
+        'dark-bg': '#2C394B',
+        'main': '#F0582C'
+      }
+    },
+   
   },
   plugins: [require("daisyui")],
 }
