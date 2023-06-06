@@ -29,16 +29,16 @@ const Navbar = () => {
                 </span>
                 <ul className={`flex items-center duration-200 z-50 flex-col py-5 lg:p-0 text-white bg-opacity-80 lg:text-black top-14 bg-black lg:bg-transparent w-full lg:w-auto lg:flex-row gap-3 absolute lg:static ${toggle ? "left-0" : "-left-full"}`}>
                     <li>
-                        <NavLink onClick={() => setToggle(!toggle)} to="/" className={({ isActive }) => isActive ? "text-primary " : "text-white"}>Home</NavLink>
+                        <NavLink onClick={() => setToggle(!toggle)} to="/" className={({ isActive }) => isActive ? "text-main" : ""}>Home</NavLink>
                     </li>
                     <li>
-                        <NavLink onClick={() => setToggle(!toggle)} to="/instructors" className={({ isActive }) => isActive ? "text-primary " : "text-white"}>Instructors</NavLink>
+                        <NavLink onClick={() => setToggle(!toggle)} to="/instructors" className={({ isActive }) => isActive ? "text-main" : ""}>Instructors</NavLink>
                     </li>
                     <li>
-                        <NavLink onClick={() => setToggle(!toggle)} to="/classes" className={({ isActive }) => isActive ? "text-primary " : "text-white"}>Classes</NavLink>
+                        <NavLink onClick={() => setToggle(!toggle)} to="/classes" className={({ isActive }) => isActive ? "text-main" : ""}>Classes</NavLink>
                     </li>
                     <li>
-                        <NavLink onClick={() => setToggle(!toggle)} to="/dashboard" className={({ isActive }) => isActive ? "text-primary " : "text-white"}> Dashboard</NavLink>
+                        <NavLink onClick={() => setToggle(!toggle)} to="/dashboard" className={({ isActive }) => isActive ? "text-main" : ""}> Dashboard</NavLink>
                     </li>
                     
 

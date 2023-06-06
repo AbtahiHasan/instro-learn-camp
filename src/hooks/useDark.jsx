@@ -5,9 +5,9 @@ const useDark = (isDark) => {
     const isDarkMode = localStorage.getItem('dark-mode')
     
     if(isDarkMode === "true") {
-        document.querySelector("html").classList.add("dark")
+        document.querySelector("html").setAttribute("data-theme", "dark")
     } else {       
-        document.querySelector("html").classList.remove("dark")
+        document.querySelector("html").setAttribute("data-theme", "light")
 
     }
 }
