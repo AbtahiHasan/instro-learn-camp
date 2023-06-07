@@ -17,7 +17,6 @@ const Sidebar = () => {
                 {
                    role === "admin" ? <>
                     <li className="mt-4 font-bold"><NavLink to="/dashboard/manage-classes" className={({isActive}) => isActive ? "d-active flex gap-2 text-[16px] items-center": "uppercase flex gap-2 text-[16px] items-center"}><span>Manage Classes</span></NavLink></li>
-                    <li className="mt-4 font-bold"><NavLink to="/dashboard/add-class" className={({isActive}) => isActive ? "d-active flex gap-2 text-[16px] items-center": "uppercase flex gap-2 text-[16px] items-center"}><span>Add Class</span></NavLink></li>
                     <li className="mt-4 font-bold"><NavLink to="/dashboard/manage-users" className={({isActive}) => isActive ? "d-active flex gap-2 text-[16px] items-center": "uppercase flex gap-2 text-[16px] items-center"}><span>Manage Users</span></NavLink></li>
                     </>
                     :

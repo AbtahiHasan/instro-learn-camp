@@ -4,11 +4,11 @@ import Home from "../client/pages/Home";
 import Login from "../login/Login";
 import DashboardLayout from "../layouts/DashboardLayout";
 import ManageClasses from "../admin/pages/ManageClasses";
-import AddClass from "../admin/pages/AddClass";
 import ManageUsers from "../admin/pages/ManageUsers";
 import MyClasses from "../instructor/pages/MyClasses";
 import Instructors from "../client/pages/Instructors";
 import Classes from "../client/pages/Classes";
+import AddClass from "../instructor/pages/AddClass";
 
 
 const Routes = createBrowserRouter([
