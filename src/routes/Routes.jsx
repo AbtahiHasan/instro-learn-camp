@@ -7,6 +7,7 @@ import ManageClasses from "../admin/pages/ManageClasses";
 import AddClass from "../admin/pages/AddClass";
 import ManageUsers from "../admin/pages/ManageUsers";
 import MyClasses from "../instructor/pages/MyClasses";
+import Instructors from "../client/pages/Instructors";
 
 
 const Routes = createBrowserRouter([
@@ -21,6 +22,10 @@ const Routes = createBrowserRouter([
             {
                 path: "/login",
                 element: <Login/>
+            }, 
+            {
+                path: "/instructors", 
+                element: <Instructors/>
             }
         ]
     },

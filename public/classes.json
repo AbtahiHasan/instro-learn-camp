@@ -1,0 +1,57 @@
+[
+   {
+        "class_name": "How To Read Sheet Music",
+        "class_image": "https://i.ibb.co/PhrGZvB/tudt-sidebar.jpg",
+        "instructor_name": "Brian Fallon",
+        "instructor_email": "brian.fallon@gmail.com",
+        "avilable_seats": 59,
+        "price": 20,
+        "status": "approved"
+   },
+   {
+      "class_name": "How Minor Chords Are Made",
+      "class_image": "https://i.ibb.co/8xbRnJT/class5.jpg",
+      "instructor_name": "Tommy Emmanuel",
+      "instructor_email": "tommy.emmanuel@gmail.com",
+      "avilable_seats": 49,
+      "price": 25,
+      "status": "approved"
+   },
+   {
+      "class_name": "4 Music Theory Fundamentals",
+      "class_image": "https://i.ibb.co/MGYT7mG/class4.jpg",
+      "instructor_name": "Mark Knopfler",
+      "instructor_email": "mark.knopfler@gmail.com",
+      "avilable_seats": 50,
+      "price": 35,
+      "status": "approved"
+   },
+   {
+      "class_name": "How To Read Guitar Tabs",
+      "class_image": "https://i.ibb.co/jbfNb0Q/class3.jpg",
+      "instructor_name": "Brian May",
+      "instructor_email": "brian.may@gmail.com",
+      "avilable_seats": 35,
+      "price": 40,
+      "status": "approved"
+   },
+   {
+      "class_name": "How To Read Sheet Music",
+      "class_image": "https://i.ibb.co/9cWh6wD/jim-campilongo.png",
+      "instructor_name": "Martin Taylo",
+      "instructor_email": "martin.taylor@gmail.com",
+      "avilable_seats": 59,
+      "price": 20,
+      "status": "approved"
+   },
+   {
+      "class_name": "The CAGED System",
+      "class_image": "https://i.ibb.co/6BHWqj8/brian-fallon.png",
+      "instructor_name": "Steve",
+      "instructor_email": "steve@gmail.com",
+      "avilable_seats": 10,
+      "price": 90,
+      "status": "approved"
+   }
+
+]

@@ -3,7 +3,7 @@ import logo from "/logo.svg"
 
 
 const Sidebar = () => {
-const role = "instructor";
+const role = "admin";
  
     return (
         <aside className=" w-dashboard-md p-10 h-screen fixed top-0 bottom-0">
