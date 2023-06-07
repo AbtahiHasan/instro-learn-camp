@@ -1,5 +1,4 @@
 import { Navigate, useLocation } from 'react-router-dom';
-import useCart from '../../hooks/useCart';
 import { useAuth } from '../../context/AuthProvider';
 
 
@@ -8,9 +7,8 @@ import { useAuth } from '../../context/AuthProvider';
 
 const RequiredLogin = ({children}) => {
     const {loading, user} = useAuth()
-    const {isLoading} = useCart()
     const location = useLocation();
-    if(loading || isLoading){
+    if(loading){
         return "LoadingSpinner"
     }
 

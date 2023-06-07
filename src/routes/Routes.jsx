@@ -9,6 +9,9 @@ import MyClasses from "../instructor/pages/MyClasses";
 import Instructors from "../client/pages/Instructors";
 import Classes from "../client/pages/Classes";
 import AddClass from "../instructor/pages/AddClass";
+import RequiredLogin from "./private/RequiredLogin";
+import AdminOnly from "./private/AdminOnly";
+import InstructorOnly from "./private/InstructorOnly";
 
 
 const Routes = createBrowserRouter([
@@ -36,24 +39,24 @@ const Routes = createBrowserRouter([
     },
     {
         path: "/dashboard",
-        element: <DashboardLayout/>,
+        element: <RequiredLogin><DashboardLayout/></RequiredLogin>,
         children: [
             {
                 path: "/dashboard/manage-classes",
-                element: <ManageClasses/>
+                element: <AdminOnly><ManageClasses/></AdminOnly> 
             },
             {
                 path: "/dashboard/manage-users",
-                element: <ManageUsers/>
+                element: <AdminOnly><ManageUsers/></AdminOnly>
             },
             {
                 path: "/dashboard/add-class",
-                element: <AddClass/>
+                element: <InstructorOnly><AddClass/></InstructorOnly> 
             },
             
             {
                 path: "/dashboard/my-classes",
-                element: <MyClasses/>
+                element: <InstructorOnly><MyClasses/></InstructorOnly>
             }
         ]
     }
