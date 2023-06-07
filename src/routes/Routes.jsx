@@ -12,6 +12,7 @@ import AddClass from "../instructor/pages/AddClass";
 import RequiredLogin from "./private/RequiredLogin";
 import AdminOnly from "./private/AdminOnly";
 import InstructorOnly from "./private/InstructorOnly";
+import SignUp from "../sign-up/SignUp";
 
 
 const Routes = createBrowserRouter([
@@ -27,6 +28,10 @@ const Routes = createBrowserRouter([
                 path: "/login",
                 element: <Login/>
             }, 
+            {
+                path: "/sign-up",
+                element: <SignUp/>
+            },
             {
                 path: "/instructors", 
                 element: <Instructors/>
@@ -57,6 +62,9 @@ const Routes = createBrowserRouter([
             {
                 path: "/dashboard/my-classes",
                 element: <InstructorOnly><MyClasses/></InstructorOnly>
+            }, 
+            {
+                path: "/dashboard/my-selected-classes"
             }
         ]
     }

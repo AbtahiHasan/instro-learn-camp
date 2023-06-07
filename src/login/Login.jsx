@@ -84,7 +84,7 @@ const Login = () => {
 
                 <section className=' p-[25px] mt-10 ml-auto md:w-1/2'>
                 <h2 className='text-3xl font-bold'>Login.</h2>
-                <p className='mt-[8px] '>Don't Have An Account? <Link to="/register" className='text-main'>Create New Account</Link></p>
+                <p className='mt-[8px] '>Don't Have An Account? <Link to="/sign-up" className='text-main'>Create New Account</Link></p>
                 <form onSubmit={handleSubmit(hendleForm)}>
                     <div className='flex flex-col my-4'>
                         <label htmlFor="email" className='my-2 text-[17px]'>Email</label>

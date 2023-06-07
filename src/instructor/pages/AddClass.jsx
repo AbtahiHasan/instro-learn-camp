@@ -15,9 +15,9 @@ const AddClass = () => {
 
 
     const addNewClass = (data) => {
-    
+        console.log(data)
         const formData = new FormData()
-        form.append("class_image", data.class_image[0])
+        formData.append("image", data.image[0])
 
         fetch(imageHostingApi, {
             method: "POST",
@@ -25,13 +25,12 @@ const AddClass = () => {
         })
         .then(res => res.json())
         .then(imgResponse => {
-            console.log(imgResponse)
             if(imgResponse.success) {
                 const newClass = {
                     class_name : data.class_name,
                     class_image : imgResponse.data.display_url,
-                    instructor_name : data.instructor_name,
-                    instructor_email : data.instructor_email,
+                    instructor_name : user?.displayName,
+                    instructor_email : user?.email,
                     avilable_seats : parseFloat(data.avilable_seats),
                     price : parseFloat(data.price),
                  }
@@ -42,7 +41,7 @@ const AddClass = () => {
                         Swal.fire({
                             position: 'center',
                             icon: 'success',
-                            title: 'Login sucessfull',
+                            title: 'Class Added sucessfull',
                             showConfirmButton: false,
                             timer: 1500
                           })
@@ -71,11 +70,11 @@ const AddClass = () => {
                     </div>
                     <div className="w-full my-2">
                         <span className="block font-bold">Instructor Name</span>
-                        <input  {...register("instructor_name", {required: true})} value={user?.displayName && user?.displayName} type="text" className="w-full px-4 py-3 outline-0 mt-3 rounded border" autoComplete="off" disabled />
+                        <input  {...register("instructor_name")} value={user?.displayName && user?.displayName} type="text" className="w-full px-4 py-3 outline-0 mt-3 rounded border" autoComplete="off" disabled />
                     </div>
                     <div className="w-full my-2">
                         <span className="block font-bold">Instructor Email</span>
-                        <input {...register("instructor_email", {required: true})} type="text" value={user?.email && user?.email} className="w-full px-4 py-3 outline-0 mt-3 rounded border" autoComplete="off" disabled />
+                        <input {...register("instructor_email")} type="text" value={user?.email && user?.email} className="w-full px-4 py-3 outline-0 mt-3 rounded border" autoComplete="off" disabled />
                     </div>
                     
                     <div className="w-full my-2">
@@ -84,7 +83,7 @@ const AddClass = () => {
                     </div>
                     <div className="w-full mt-5">
                     <span className="block font-bold">upload a image</span>
-                        <input type="file" {...register("class_image", {required: true})} className="file-input file-input-bordered w-full max-w-xs" />
+                        <input type="file" {...register("image", {required: true})} className="file-input file-input-bordered w-full max-w-xs" />
                     </div>
                     <div className="w-full my-2">
                         <span className="block font-bold">Price</span>

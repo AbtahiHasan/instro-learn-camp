@@ -8,20 +8,22 @@ import logo from "/logo.svg"
 import { useState } from "react";
 import { useAuth } from "../../../context/AuthProvider";
 import useDark from "../../../hooks/useDark";
+import useAuthorization from "../../../hooks/useAuthorization";
 
 
 
 const Navbar = () => {
     const [toggle, setToggle] = useState(false)
+    const {role} = useAuthorization()
     const {user, logOut} = useAuth()
     const [isDark, setIsdark] = useState(null)
     useDark(isDark)
     return (
         <nav className="shadow-md">
             <div className="container flex justify-between py-4">
-            <Link className="flex items-center gap-1">
+            <NavLink to="/" className="flex items-center gap-1">
             <img className="h-[50px]" src={logo} alt="" /> <h3 className="text-2xl font-bold">InstroLearnCamp</h3>
-            </Link>
+            </NavLink>
             <span className="lg:hidden text-xl">
                     {
                        toggle ? <IoMdClose className="cursor-pointer" onClick={() => setToggle(!toggle)} /> : <HiOutlineMenuAlt2 className="cursor-pointer"  onClick={() => setToggle(!toggle)} />
@@ -38,7 +40,7 @@ const Navbar = () => {
                         <NavLink onClick={() => setToggle(!toggle)} to="/classes" className={({ isActive }) => isActive ? "text-main" : ""}>Classes</NavLink>
                     </li>
                     <li>
-                        <NavLink onClick={() => setToggle(!toggle)} to="/dashboard" className={({ isActive }) => isActive ? "text-main" : ""}> Dashboard</NavLink>
+                        {user?.email && <NavLink onClick={() => setToggle(!toggle)} to={`/dashboard/${role === "admin" ? "manage-classes" : role === "instructor" ? "add-class" : "my-selected-classes"}`} className={({ isActive }) => isActive ? "text-main" : ""}> Dashboard</NavLink> }
                     </li>
                     
                     <button> 

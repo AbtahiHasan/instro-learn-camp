@@ -14,7 +14,7 @@ const Sidebar = () => {
     return (
         <aside className=" w-dashboard-md p-10 h-screen fixed top-0 bottom-0 shadow-2xl">
             <div className="flex gap-3 items-center">
-            <Link className="flex items-center gap-1 -ml-10">
+            <Link to={`/dashboard/${role === "admin" ? "manage-classes" : role === "instructor" ? "add-class" : "my-selected-classes"}`} className="flex items-center gap-1 -ml-10">
             <img className="h-[50px]" src={logo} alt="" /> <h3 className="text-2xl font-bold uppercase">{role}</h3>
             </Link>
             <button className="-mr-10 block"> 
