@@ -9,12 +9,13 @@ import useAuthorization from '../../hooks/useAuthorization';
 
 
 
+
 const AdminOnly = ({children}) => {
     const {loading, user} = useAuth()
     const {isLoading, role} = useAuthorization()
     const location = useLocation();
     if(loading || isLoading){
-        return "LoadingSpinner"
+        return 
     }
     
     if(user.email && role === "admin"){
