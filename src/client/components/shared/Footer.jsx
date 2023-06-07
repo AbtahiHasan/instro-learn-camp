@@ -7,7 +7,7 @@ import logo from "/logo.svg"
 const Footer = () => {
     return (
 
-      <footer  className="relative z-10 shadow-inner pt-20 pb-10 lg:pt-[120px]  lg:pb-20 px-3 ">
+      <footer  className="relative mt-[140px] z-10 shadow-inner pt-20 pb-10 lg:pt-[120px]  lg:pb-20 px-3 ">
         <div className="container mx-auto">
           <div className="-mx-4 grid md:grid-cols-4">
             <div className="w-full px-4">

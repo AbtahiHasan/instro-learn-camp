@@ -1,12 +1,13 @@
 import useTitle from "../../hooks/useTitle";
+import PopullarInstructors from "../components/PopularInstructors";
 
 
 const Home = () => {
     useTitle("home")
     return (
-        <div>
-            home
-        </div>
+        <main>
+            <PopullarInstructors/>
+        </main>
     );
 };
 

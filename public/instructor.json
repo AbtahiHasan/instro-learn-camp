@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Brian Fallon",
+        "image": "https://i.ibb.co/kG79yYd/tommy-emmanuel.png",
+        "email": "brian.fallon@gmail.com"        
+    },
+    {
+        "name": "Tommy Emmanuel",
+        "image": "https://i.ibb.co/SVBwcZg/richard-bennett.png",
+        "email": "tommy.emmanuel@gmail.com"        
+    },
+    {
+        "name": "Mark Knopfler",
+        "image": "https://i.ibb.co/sjt64Bb/mark-knopfler.png",
+        "email": "mark.knopfler@gmail.com"        
+    },
+    {
+        "name": "Brian May",
+        "image": "https://i.ibb.co/cbB7cV8/les-wise.png",
+        "email": "brian.may@gmail.com"        
+    },
+    {
+        "name": "Martin Taylor",
+        "image": "https://i.ibb.co/9cWh6wD/jim-campilongo.png",
+        "email": "martin.taylor@gmail.com"        
+    },
+    {
+        "name": "Steve",
+        "image": "https://i.ibb.co/6BHWqj8/brian-fallon.png",
+        "email": "steve@gmail.com"        
+    }
+]
