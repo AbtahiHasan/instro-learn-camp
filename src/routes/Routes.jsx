@@ -43,13 +43,14 @@ const Routes = createBrowserRouter([
                 element: <ManageClasses/>
             },
             {
-                path: "/dashboard/add-class",
-                element: <AddClass/>
-            },
-            {
                 path: "/dashboard/manage-users",
                 element: <ManageUsers/>
             },
+            {
+                path: "/dashboard/add-class",
+                element: <AddClass/>
+            },
+            
             {
                 path: "/dashboard/my-classes",
                 element: <MyClasses/>
