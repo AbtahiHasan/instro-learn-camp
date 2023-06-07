@@ -6,7 +6,8 @@
         "instructor_email": "brian.fallon@gmail.com",
         "avilable_seats": 59,
         "price": 20,
-        "status": "approved"
+        "status": "approved",
+        "enrolled": 0
    },
    {
       "class_name": "How Minor Chords Are Made",
@@ -15,7 +16,8 @@
       "instructor_email": "tommy.emmanuel@gmail.com",
       "avilable_seats": 49,
       "price": 25,
-      "status": "approved"
+      "status": "approved",
+      "enrolled": 0
    },
    {
       "class_name": "4 Music Theory Fundamentals",
@@ -24,7 +26,8 @@
       "instructor_email": "mark.knopfler@gmail.com",
       "avilable_seats": 50,
       "price": 35,
-      "status": "approved"
+      "status": "approved",
+      "enrolled": 0
    },
    {
       "class_name": "How To Read Guitar Tabs",
@@ -33,7 +36,8 @@
       "instructor_email": "brian.may@gmail.com",
       "avilable_seats": 35,
       "price": 40,
-      "status": "approved"
+      "status": "approved",
+      "enrolled": 0
    },
    {
       "class_name": "How To Read Sheet Music",
@@ -42,7 +46,8 @@
       "instructor_email": "martin.taylor@gmail.com",
       "avilable_seats": 59,
       "price": 20,
-      "status": "approved"
+      "status": "approved",
+      "enrolled": 0
    },
    {
       "class_name": "The CAGED System",
@@ -51,7 +56,8 @@
       "instructor_email": "steve@gmail.com",
       "avilable_seats": 10,
       "price": 90,
-      "status": "approved"
+      "status": "approved",
+      "enrolled": 0
    }
 
 ]
