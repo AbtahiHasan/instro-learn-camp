@@ -1,13 +1,11 @@
 import { BsTrash3Fill } from "react-icons/bs";
-// import userImage from "/icon/user.svg"
-// import admin from "/icon/admin.png"
 
 const UserTable = ({user, i, deleteUser, }) => {
     const {_id, photo_url,name, email, role} = user
     return (
         
-        <tr className="border-b-2 text-[#737373]">
-            <td className="py-2 text-center text-[#151515] font-bold">{i + 1}</td>
+        <tr className="border-b-2 ">
+            <td className="py-2 text-center font-bold">{i + 1}</td>
             <td className="py-2"><img className="h-[75px] w-[75px] object-cover mx-auto" src={photo_url} alt="" /></td>
             <td className="py-2 text-center">{name}</td>
             <td className="py-2 text-center">{email}</td>

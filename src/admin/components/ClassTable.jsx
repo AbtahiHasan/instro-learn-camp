@@ -6,8 +6,8 @@ const ClassTable = ({singleClass, i, }) => {
     const {_id, class_image,class_name, instructor_email,instructor_name, avilable_seats, price} = singleClass
     return (
         
-        <tr className="border-b-2 text-[#737373]">
-            <td className="py-2 text-center text-[#151515] font-bold">{i + 1}</td>
+        <tr className="border-b-2 ">
+            <td className="py-2 text-center font-bold">{i + 1}</td>
             <td className="py-2"><img className="h-[75px] w-[75px] object-cover mx-auto" src={class_image} alt="" /></td>
             <td className="py-2 text-center">{class_name}</td>
             <td className="py-2 text-center">{instructor_email}</td>

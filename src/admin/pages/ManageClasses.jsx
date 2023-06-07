@@ -15,18 +15,18 @@ const ManageClasses = () => {
             <div className='flex justify-between items-center font-bold mt-4'>
                 <h3 className='text-3xl'>Total Classes: {classes.length > 0 ?  classes.length : 0}</h3>
             </div>
-            <section  className='bg-white  h-[650px] mt-2 overflow-x-auto relative'>
-                <table className='w-full text-white'>
+            <section  className=' h-[650px] mt-2 overflow-x-auto relative'>
+                <table className='w-full'>
                     <thead >
                         <tr className='bg-main sticky top-0 px-10'>
                             <th className='py-3'></th>
-                            <th className='py-3 lowercase'>CLASS IMAGE</th>
-                            <th className='py-3 lowercase'>CLASS NAME</th>
-                            <th className='py-3 lowercase'>INSTRUCTOR EMAIL</th>
-                            <th className='py-3 lowercase'>INSTRUCTOR NAME</th>
-                            <th className='py-3 lowercase'>AVAILAVLE SEATS</th>
-                            <th className='py-3 lowercase'>PRICE</th>
-                            <th className='py-3 lowercase'>ACTION</th>
+                            <th className='py-3  text-white lowercase'>CLASS IMAGE</th>
+                            <th className='py-3  text-white lowercase'>CLASS NAME</th>
+                            <th className='py-3  text-white lowercase'>INSTRUCTOR EMAIL</th>
+                            <th className='py-3  text-white lowercase'>INSTRUCTOR NAME</th>
+                            <th className='py-3  text-white lowercase'>AVAILAVLE SEATS</th>
+                            <th className='py-3  text-white lowercase'>PRICE</th>
+                            <th className='py-3  text-white lowercase'>ACTION</th>
                         </tr>
                     </thead>
                     <tbody >

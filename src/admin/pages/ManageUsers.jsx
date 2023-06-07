@@ -41,16 +41,16 @@ const ManageUsers = () => {
             <div className='flex justify-between items-center font-bold mt-4'>
                 <h3 className='text-3xl'>Total Users: {users.length > 0 ?  users.length : 0}</h3>
             </div>
-            <section  className='bg-white  h-[650px] mt-2 overflow-x-auto relative'>
-                <table className='w-full text-white'>
+            <section  className='h-[650px] mt-2 overflow-x-auto relative'>
+                <table className='w-full'>
                     <thead >
                         <tr className='bg-main sticky top-0 px-10'>
-                            <th className='py-3'></th>
-                            <th className='py-3'>USER IMAGE</th>
-                            <th className='py-3'>NAME</th>
-                            <th className='py-3'>EMAIL</th>
-                            <th className='py-3'>ROLE</th>
-                            <th className='py-3'>ACTION</th>
+                            <th className='py-3  text-white'></th>
+                            <th className='py-3  text-white'>USER IMAGE</th>
+                            <th className='py-3  text-white'>NAME</th>
+                            <th className='py-3  text-white'>EMAIL</th>
+                            <th className='py-3  text-white'>ROLE</th>
+                            <th className='py-3  text-white'>ACTION</th>
                         </tr>
                     </thead>
                     <tbody >
