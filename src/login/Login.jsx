@@ -5,6 +5,8 @@ import { AiFillEyeInvisible,AiFillEye  } from "react-icons/ai";
 import useTitle from "../hooks/useTitle";
 import { useAuth } from '../context/AuthProvider';
 import { useForm } from 'react-hook-form';
+import useAxiosSecure from '../hooks/useAxiosSecure';
+import Swal from 'sweetalert2';
 
 
 
@@ -17,9 +19,10 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/'
-    const {signIn, signInWithGoogle} = useAuth()
+    const {signIn, signInWithGoogle, user} = useAuth()
     const [error, setError] = useState(null)
     const { register, handleSubmit, } = useForm();
+    const {axiosSecure} = useAxiosSecure()
 
     const hendleForm = (data) => {
         console.log(data)
@@ -45,7 +48,25 @@ const Login = () => {
         const handelGoogle = () => {
             signInWithGoogle()
                 .then((result) => {
+                    const user = {
+                        name: result?.user?.displayName,
+                        email: result?.user?.email,
+                        photo_url: result?.user?.photoURL
+                    }
 
+                    console.log(result)
+                    axiosSecure.put(`/add-user?email=${user?.email}`, user)
+                    .then(res => {
+                        if(res.data) {
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: 'Login sucessfull',
+                                showConfirmButton: false,
+                                timer: 1500
+                              })
+                        }
+                    })
                     navigate(from)
                 })
                 .catch((error) => {

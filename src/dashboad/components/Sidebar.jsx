@@ -1,10 +1,12 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "/logo.svg"
+import useAuthorization from "../../hooks/useAuthorization";
 
 
 const Sidebar = () => {
-const role = "admin";
- 
+    const {role} = useAuthorization()
+    console.log(role)
+  
     return (
         <aside className=" w-dashboard-md p-10 h-screen fixed top-0 bottom-0">
             <Link className="flex items-center gap-1">
