@@ -6,6 +6,20 @@ import UserTable from '../components/UserTable';
 const ManageUsers = () => {
     const {refetchUser, users} = useUsers()
     const {axiosSecure} = useAxiosSecure()
+    const updateUserRole = async (role, id) => {
+        console.log(role, id)
+        const res = await axiosSecure.put(`/change-user-role/${id}`, {role})
+        if(res.data.modifiedCount > 0) {
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Student Role Has Updated',
+                showConfirmButton: false,
+                timer: 1500
+              })
+        }
+
+    }
     const deleteUser = (id) => {        
                 Swal.fire({
                     title: 'Are you sure?',
@@ -56,7 +70,7 @@ const ManageUsers = () => {
                     <tbody >
 
                         {
-                            users && users.map((user, i) => <UserTable key={user._id} i={i} user={user} deleteUser={deleteUser} />)
+                            users && users.map((user, i) => <UserTable key={user._id} i={i} user={user} updateUserRole={updateUserRole} deleteUser={deleteUser} />)
                         }
                         
                     </tbody>
