@@ -11,6 +11,20 @@ const ManageClasses = () => {
     const [isOpen, setIsOpen] = useState(false)
     const [id, setId] = useState(null)
     const {axiosSecure} = useAxiosSecure()
+    const updateStatus = async (status, id) => {
+        console.log(status, id)
+        const res = await axiosSecure.put(`/change-class-status/${id}`, {status})
+        if(res.data.modifiedCount > 0) {
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Status Has Updated',
+                showConfirmButton: false,
+                timer: 1500
+              })
+        }
+
+    }
     const sendFeedback = (e) => {
         e.preventDefault()
         
@@ -69,7 +83,7 @@ const ManageClasses = () => {
                     <tbody >
 
                         {
-                            classes && classes.map((singleClass, i) => <ClassTable key={singleClass._id} openFeed={openFeed} i={i} singleClass={singleClass}  />)
+                            classes && classes.map((singleClass, i) => <ClassTable key={singleClass._id} updateStatus={updateStatus} openFeed={openFeed} i={i} singleClass={singleClass}  />)
                         }
                         
                     </tbody>
