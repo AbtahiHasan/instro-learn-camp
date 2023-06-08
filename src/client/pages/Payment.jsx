@@ -1,19 +1,20 @@
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import CheckoutForm from "../components/payment/CheckoutForm";
+import useSelectedClasses from "../../hooks/useSelectedClasses";
 
 
 // TODO: provide publishable Key
 const stripePromise = loadStripe(import.meta.env.VITE_Payment_Gateway_PK);
 const Payment = () => {
-
-    // const total = cart.reduce((sum, item) => sum + item.price, 0);
-    // const price = parseFloat(total.toFixed(2))
+    const {selectedClasses} = useSelectedClasses()
+    const total = selectedClasses.reduce((sum, item) => sum + item.price, 0);
+    const price = parseFloat(total.toFixed(2))
     return (
         <div>
             <h2 className="text-3xl"> Payment</h2>
             <Elements stripe={stripePromise}>
-                {/* <CheckoutForm cart={cart} price={price}/> */}
+                <CheckoutForm selectedClasses={selectedClasses} price={price}/>
             </Elements>
         </div>
     );
