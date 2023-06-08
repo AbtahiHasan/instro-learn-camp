@@ -13,6 +13,10 @@ import RequiredLogin from "./private/RequiredLogin";
 import AdminOnly from "./private/AdminOnly";
 import InstructorOnly from "./private/InstructorOnly";
 import SignUp from "../sign-up/SignUp";
+import Payment from "../client/pages/Payment";
+import SelectedClasses from "../client/pages/SelectedClasses";
+import EnrolledClass from "../client/pages/EnrolledClass";
+import PaymentHistory from "../client/pages/PaymentHistory";
 
 
 const Routes = createBrowserRouter([
@@ -64,7 +68,22 @@ const Routes = createBrowserRouter([
                 element: <InstructorOnly><MyClasses/></InstructorOnly>
             }, 
             {
-                path: "/dashboard/my-selected-classes"
+                path: "/dashboard/selected-classes",
+                element: <SelectedClasses/>
+
+            },
+            {
+                path: "/dashboard/enrolled-classes",
+                element: <EnrolledClass/>
+
+            },
+            {
+                path: "/dashboard/payment",
+                element: <Payment/>
+            },
+            {
+                path: "/dashboard/payment-history",
+                element: <PaymentHistory/>
             }
         ]
     }

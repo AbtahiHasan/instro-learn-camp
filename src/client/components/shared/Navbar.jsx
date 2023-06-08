@@ -40,7 +40,7 @@ const Navbar = () => {
                         <NavLink onClick={() => setToggle(!toggle)} to="/classes" className={({ isActive }) => isActive ? "text-main" : ""}>Classes</NavLink>
                     </li>
                     <li>
-                        {user?.email && <NavLink onClick={() => setToggle(!toggle)} to={`/dashboard/${role === "admin" ? "manage-classes" : role === "instructor" ? "add-class" : "my-selected-classes"}`} className={({ isActive }) => isActive ? "text-main" : ""}> Dashboard</NavLink> }
+                        {user?.email && <NavLink onClick={() => setToggle(!toggle)} to={`/dashboard/${role === "admin" ? "manage-classes" : role === "instructor" ? "add-class" : "selected-classes"}`} className={({ isActive }) => isActive ? "text-main" : ""}> Dashboard</NavLink> }
                     </li>
                     
                     <button> 
