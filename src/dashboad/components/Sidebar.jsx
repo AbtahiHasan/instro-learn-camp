@@ -34,7 +34,6 @@ const Sidebar = () => {
                     <li className="mt-4 font-bold"><NavLink to="/dashboard/my-classes" className={({isActive}) => isActive ? "d-active flex gap-2 text-[16px] items-center": "uppercase flex gap-2 text-[16px] items-center"}><span>My Classes</span></NavLink></li>
                     </> : 
                     <>
-                        <li className="mt-4 font-bold"><NavLink to="/dashboard/payment" className={({isActive}) => isActive ? "d-active flex gap-2 text-[16px] items-center": "uppercase flex gap-2 text-[16px] items-center"}><span>Payment</span></NavLink></li>
                         <li className="mt-4 font-bold"><NavLink to="/dashboard/payment-history" className={({isActive}) => isActive ? "d-active flex gap-2 text-[16px] items-center": "uppercase flex gap-2 text-[16px] items-center"}><span>Payment History</span></NavLink></li>
                         <li className="mt-4 font-bold"><NavLink to="/dashboard/selected-classes" className={({isActive}) => isActive ? "d-active flex gap-2 text-[16px] items-center": "uppercase flex gap-2 text-[16px] items-center"}><span>Selected Classes</span></NavLink></li>
                         <li className="mt-4 font-bold"><NavLink to="/dashboard/enrolled-classes" className={({isActive}) => isActive ? "d-active flex gap-2 text-[16px] items-center": "uppercase flex gap-2 text-[16px] items-center"}><span>Enrolled Classes</span></NavLink></li>
