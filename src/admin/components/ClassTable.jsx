@@ -1,8 +1,7 @@
 import { BsTrash3Fill } from "react-icons/bs";
-// import userImage from "/icon/user.svg"
-// import admin from "/icon/admin.png"
 
-const ClassTable = ({singleClass, i, }) => {
+
+const ClassTable = ({singleClass, i, setIsOpen, openFeed}) => {
     const {_id, class_image,class_name, instructor_email,instructor_name, avilable_seats, price} = singleClass
     return (
         
@@ -14,6 +13,15 @@ const ClassTable = ({singleClass, i, }) => {
             <td className="py-2 text-center">{instructor_name}</td>
             <td className="py-2 text-center">{avilable_seats}</td>
             <td className="py-2 text-center">${price}</td>
+            <td className="py-2 text-center">
+                <div>
+                    <button className="bg-main px-6 py-2 rounded m-1 text-sm block mx-auto">Approved</button>
+                    <button className="bg-main px-6 py-2 rounded m-1 text-sm block mx-auto">Denied</button>
+                    <button onClick={() => openFeed(_id)} className="bg-main px-6 py-2 rounded m-1 text-sm block mx-auto">
+                        Send Feedback
+                    </button>
+                </div>
+            </td>
         </tr>
         
     );

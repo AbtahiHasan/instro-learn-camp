@@ -15,7 +15,6 @@ const AddClass = () => {
 
 
     const addNewClass = (data) => {
-        console.log(data)
         const formData = new FormData()
         formData.append("image", data.image[0])
 
@@ -32,7 +31,7 @@ const AddClass = () => {
                     instructor_name : user?.displayName,
                     instructor_email : user?.email,
                     avilable_seats : parseFloat(data.avilable_seats),
-                    price : parseFloat(data.price),
+                    price : parseFloat(data.price)
                  }
         
                 axiosSecure.post("/add-class", newClass)

@@ -14,7 +14,9 @@ const MyClasses = () => {
                 <thead >
                     <tr className='bg-main sticky top-0 px-10'>
                         <th className='py-3  text-white'></th>
+                        <th className='py-3  text-white'>Class Image</th>
                         <th className='py-3  text-white'>Total enrolled</th>
+                        <th className='py-3  text-white'>Class Name</th>
                         <th className='py-3  text-white'>Feedback</th>
                         <th className='py-3  text-white'>Status</th>
                         <th className='py-3  text-white'>Action</th>

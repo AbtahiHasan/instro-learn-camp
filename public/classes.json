@@ -7,7 +7,8 @@
         "avilable_seats": 59,
         "price": 20,
         "status": "approved",
-        "enrolled": 0
+        "enrolled": 0,
+        "feedback": ""
    },
    {
       "class_name": "How Minor Chords Are Made",
@@ -17,7 +18,8 @@
       "avilable_seats": 49,
       "price": 25,
       "status": "approved",
-      "enrolled": 0
+      "enrolled": 0,
+      "feedback": ""
    },
    {
       "class_name": "4 Music Theory Fundamentals",
@@ -27,7 +29,8 @@
       "avilable_seats": 50,
       "price": 35,
       "status": "approved",
-      "enrolled": 0
+      "enrolled": 0,
+      "feedback": ""
    },
    {
       "class_name": "How To Read Guitar Tabs",
@@ -37,7 +40,8 @@
       "avilable_seats": 35,
       "price": 40,
       "status": "approved",
-      "enrolled": 0
+      "enrolled": 0,
+      "feedback": ""
    },
    {
       "class_name": "How To Read Sheet Music",
@@ -47,7 +51,8 @@
       "avilable_seats": 59,
       "price": 20,
       "status": "approved",
-      "enrolled": 0
+      "enrolled": 0,
+      "feedback": ""
    },
    {
       "class_name": "The CAGED System",
@@ -57,7 +62,8 @@
       "avilable_seats": 10,
       "price": 90,
       "status": "approved",
-      "enrolled": 0
+      "enrolled": 0,
+      "feedback": ""
    }
 
 ]
