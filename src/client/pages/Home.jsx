@@ -3,6 +3,7 @@ import Banner from "../components/Banner";
 import PopularClasses from "../components/PopularClasses";
 
 import PopullarInstructors from "../components/PopularInstructors";
+import WhyChoose from "../components/WhyChoose";
 
 
 const Home = () => {
@@ -12,6 +13,7 @@ const Home = () => {
             <Banner/>
             <PopullarInstructors/>
             <PopularClasses/>
+            <WhyChoose/>
         </main>
     );
 };
