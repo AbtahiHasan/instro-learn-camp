@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { IoIosMail,  } from "react-icons/io";
 import logo from "/logo.svg"
+import ScrollToTop from 'react-scroll-to-top';
+import MyIcon from './MyIcon';
 
 const Footer = () => {
     return (
@@ -116,6 +118,7 @@ const Footer = () => {
           <p className='mt-4 text-[#4a4a4a]'> © 2023 InstroLearnCamp.com Website. All rights reserved. </p>
          
         </div>
+        <ScrollToTop smooth top={1000} component={<MyIcon />} />
       </footer>
    
       

@@ -74,7 +74,7 @@ const EditClass = () => {
                 </section>
             
                 <div >
-                    <button className="px-4 bg-main block mt-10 py-3 rounded text-white w-full"  type="submit">Add Class</button>
+                    <button className="px-4 bg-main block mt-10 py-3 rounded text-white w-full"  type="submit">Update Class</button>
                 </div>
                 
             </form>
