@@ -17,6 +17,7 @@ import Payment from "../client/pages/Payment";
 import SelectedClasses from "../client/pages/SelectedClasses";
 import EnrolledClass from "../client/pages/EnrolledClass";
 import PaymentHistory from "../client/pages/PaymentHistory";
+import EditClass from "../instructor/pages/EditClass";
 
 
 const Routes = createBrowserRouter([
@@ -62,7 +63,10 @@ const Routes = createBrowserRouter([
                 path: "/dashboard/add-class",
                 element: <InstructorOnly><AddClass/></InstructorOnly> 
             },
-            
+            {
+                path: "/dashboard/:id/edit",
+                element: <InstructorOnly><EditClass/></InstructorOnly> 
+            },
             {
                 path: "/dashboard/my-classes",
                 element: <InstructorOnly><MyClasses/></InstructorOnly>
