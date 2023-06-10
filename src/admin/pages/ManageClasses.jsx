@@ -9,13 +9,14 @@ import useTitle from '../../hooks/useTitle';
 
 const ManageClasses = () => {
     useTitle("Manage Classes")
-    const { classes} = useClasses("all")
+    const { classes, refetch} = useClasses("all")
     const [isOpen, setIsOpen] = useState(false)
     const [id, setId] = useState(null)
     const {axiosSecure} = useAxiosSecure()
     const updateStatus = async (status, id) => {
         const res = await axiosSecure.put(`/change-class-status/${id}`, {status})
         if(res.data.modifiedCount > 0) {
+            refetch()
             Swal.fire({
                 position: 'center',
                 icon: 'success',
@@ -31,10 +32,10 @@ const ManageClasses = () => {
         
         if(e.target.feed.value) {
             axiosSecure.put(`/send-feedback/${id}`, {feedback: e.target.feed.value})
-            e.target.reset()
+            
             .then(res => {
+                
                 if(res.data.modifiedCount > 0) {
-                    setIsOpen(false)
                     Swal.fire({
                         position: 'center',
                         icon: 'success',
@@ -44,6 +45,8 @@ const ManageClasses = () => {
                       })
                 }
             })
+            e.target.reset()
+            setIsOpen(false)
         }
     }
    
