@@ -18,12 +18,15 @@ import SelectedClasses from "../client/pages/SelectedClasses";
 import EnrolledClass from "../client/pages/EnrolledClass";
 import PaymentHistory from "../client/pages/PaymentHistory";
 import EditClass from "../instructor/pages/EditClass";
+import ErrorPage from "../error/ErrorPage";
+
 
 
 const Routes = createBrowserRouter([
     {
         path: "/",
         element: <RootLayout/>,
+        errorElement: <ErrorPage/>,
         children: [
             {
                 path: "/",

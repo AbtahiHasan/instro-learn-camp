@@ -31,7 +31,8 @@ const AddClass = () => {
                     instructor_name : user?.displayName,
                     instructor_email : user?.email,
                     avilable_seats : parseFloat(data.avilable_seats),
-                    price : parseFloat(data.price)
+                    price : parseFloat(data.price),
+                    instructor_photo: user?.photoURL
                  }
         
                 axiosSecure.post("/add-class", newClass)

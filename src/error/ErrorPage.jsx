@@ -1,8 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { HiHome } from "react-icons/hi";
-import errorImg from "/error.svg"
+import errorImg from "/404.png"
 import useTitle from '../hooks/useTitle';
+
 
 
 const ErrorPage = () => {
@@ -14,7 +15,7 @@ const ErrorPage = () => {
         <div className='max-w-md text-center'>
 
           <Link className=" text-white w-[200px] p-2 text-[21px]   mt-[10px]" to='/' >
-          <button className='bg-[#00abe4] mx-auto p-2 px-5 flex items-center rounded-full gap-3'> <HiHome/> <span>Back to homepage</span></button>
+          <button className='bg-main mx-auto p-2 px-5 flex items-center rounded-full gap-3'> <HiHome/> <span>Back to homepage</span></button>
           </Link>
         </div>
       </div>
