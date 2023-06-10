@@ -20,7 +20,7 @@ const Navbar = () => {
     useDark(isDark)
     return (
         <nav className="shadow-md">
-            <div className="container flex justify-between py-4">
+            <div className="container flex justify-between items-center py-4">
                 <motion.div 
                 whileHover={{scale: 1.1}}
                 transition={{type: "spring", stiffness: 120}}
@@ -31,11 +31,11 @@ const Navbar = () => {
             </NavLink>
                 </motion.div>
             
-            <span className="lg:hidden text-xl">
+            <p className="lg:hidden text-xl">
                     {
                        toggle ? <IoMdClose className="cursor-pointer" onClick={() => setToggle(!toggle)} /> : <HiOutlineMenuAlt2 className="cursor-pointer"  onClick={() => setToggle(!toggle)} />
                     }
-                </span>
+                </p>
                 <ul 
                   
                 className={`flex items-center duration-200 z-50 flex-col py-5 lg:p-0 top-16 bg-black lg:bg-transparent w-full lg:w-auto lg:flex-row gap-3 absolute lg:static ${toggle ? "left-0" : "-left-full"}`}>
