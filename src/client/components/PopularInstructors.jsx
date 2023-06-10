@@ -9,7 +9,7 @@ const PopularInstructors = () => {
     const {data: instructors = []} = useQuery({
         queryKey: ["popular-instructor"],
         queryFn: async () => {
-            const res = await axiosSecure.get("/instructors")
+            const res = await axiosSecure.get("/popular-instructors")
             return res.data
         }
     })
