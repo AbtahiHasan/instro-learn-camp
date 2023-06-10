@@ -4,7 +4,7 @@ import { HiOutlineMenuAlt2 } from "react-icons/hi";
 import { AiOutlineLogin } from "react-icons/ai";
 import { BsFillMoonStarsFill,  BsFillSunFill } from "react-icons/bs";
 import {motion} from "framer-motion"
-import logo from "/logo.svg"
+import logo from "/instro.png"
 import { useState } from "react";
 import { useAuth } from "../../../context/AuthProvider";
 import useDark from "../../../hooks/useDark";

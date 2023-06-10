@@ -10,8 +10,10 @@ const useAuthorization = () => {
         queryKey: ["authorization", user?.email],
         enabled: !loading,
         queryFn: async () => {
-            const res = await axiosSecure.get(`/authorization?email=${user?.email}`)
-            return res.data.role
+            if(user){
+                const res = await axiosSecure.get(`/authorization?email=${user?.email}`)
+                return res.data.role
+            }
         }
     })
     return {role, isLoading}

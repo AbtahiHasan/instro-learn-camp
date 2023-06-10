@@ -1,23 +1,24 @@
-
+import { FcGoogle } from "react-icons/fc";
 import { Link } from 'react-router-dom';
 import {  updateProfile } from 'firebase/auth';
 import { useState } from 'react';
 import useTitle from '../hooks/useTitle';
 import { useAuth } from '../context/AuthProvider';
 import { useForm } from 'react-hook-form';
+import useAxiosSecure from "../hooks/useAxiosSecure";
     
     
 
 
 const SignUp = () => {
     useTitle("Sign Up")
-    const {register, handleSubmit} = useForm()
-  
-    const {createUser} = useAuth()
+    const {register, handleSubmit, reset} = useForm()
+    const {createUser, signInWithGoogle} = useAuth()
     const [error, setError] = useState(null)
     const [success, setSuccess] = useState(null)
+    const {axiosSecure} = useAxiosSecure()
     const hendleForm = (data) => {
-        console.log(data)
+
 
         const name = data.name
         const email = data.email
@@ -57,18 +58,44 @@ const SignUp = () => {
                 displayName: name,
                 photoURL: profileUrl
             })
-           form.reset()
+           reset()
 
            setSuccess("Registration successfull")
 
         }) 
         .catch(error => {
-            
+            setError(error)
         })
     }
 
 
+    const handelGoogle = () => {
+        signInWithGoogle()
+            .then((result) => {
+                const user = {
+                    name: result?.user?.displayName,
+                    email: result?.user?.email,
+                    photo_url: result?.user?.photoURL
+                }
 
+                
+                axiosSecure.put(`/add-user?email=${user?.email}`, user)
+                .then(res => {
+                    if(res.data) {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Login sucessfull',
+                            showConfirmButton: false,
+                            timer: 1500
+                          })
+                    }
+                })
+                navigate(from)
+            })
+            .catch((error) => {
+            })
+    }
 
 
     return (
@@ -103,8 +130,13 @@ const SignUp = () => {
                     <p className='text-[#da4747]'>{error && error}</p>
                     <p className='text-[#399d23]'>{success && success}</p>
 
+                    <div className='flex flex-col md:flex-row items-center gap-5'>
                     <button type='submit' className='bg-main  p-2  rounded-xl text-white w-full  text-[21px] '>Sign Up</button>         
+       
+
+                    <div onClick={handelGoogle} className='cursor-pointer p-2 border rounded-full w-full flex justify-center items-center gap-[6px] '><FcGoogle className='text-[32px]'/><span>Continue with Google</span></div>  
                     
+                   </div>
                     
 
                 </form>

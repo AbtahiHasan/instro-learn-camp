@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect } from "react";
 
 const axiosSecure = axios.create({
-    baseURL: "http://localhost:3000"
+    baseURL: "https://instro-learn-camp.vercel.app"
 })
 
 const useAxiosSecure = () => {

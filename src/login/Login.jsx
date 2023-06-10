@@ -25,14 +25,14 @@ const Login = () => {
     const {axiosSecure} = useAxiosSecure()
 
     const hendleForm = (data) => {
-        console.log(data)
+       
         setError(null)
 
-        if(!email || !password) {
+        if(!data.email || !data.password) {
             setError("Cannot leave any field empty")
             return
         } 
-        signIn(email, password) 
+        signIn(data.email, data.password) 
         .then (() => {
             navigate(from, { replace: true })
             form.reset()
@@ -54,7 +54,7 @@ const Login = () => {
                         photo_url: result?.user?.photoURL
                     }
 
-                    console.log(result)
+                   
                     axiosSecure.put(`/add-user?email=${user?.email}`, user)
                     .then(res => {
                         if(res.data) {

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { IoIosMail,  } from "react-icons/io";
-import logo from "/logo.svg"
+import logo from "/instro.png"
 import ScrollToTop from 'react-scroll-to-top';
 import MyIcon from './MyIcon';
 
@@ -103,7 +103,7 @@ const Footer = () => {
                   </li>
                   <li className='flex items-center gap-3 mt-3'>  
                     <IoIosMail/>                   
-                    contact@upar-edu-toy.com                    
+                    contact@instro-learn-camp.com                    
                   </li>
                   
                  

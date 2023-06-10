@@ -46,7 +46,6 @@ const CheckoutForm = ({ selectedClasses, price }) => {
         })
 
         if (error) {
-            console.log('error', error)
             setCardError(error.message);
         }
         else {
@@ -69,13 +68,12 @@ const CheckoutForm = ({ selectedClasses, price }) => {
         );
 
         if (confirmError) {
-            console.log(confirmError);
+            setCardError(confirmError);
         }
 
-        console.log('payment intent', paymentIntent)
+        
         setProcessing(false)
         if (paymentIntent.status === 'succeeded') {
-            setTransactionId(paymentIntent.id);
             const payment = {
                 email: user?.email,
                 transactionId: paymentIntent.id,

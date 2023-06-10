@@ -14,7 +14,6 @@ const ManageClasses = () => {
     const [id, setId] = useState(null)
     const {axiosSecure} = useAxiosSecure()
     const updateStatus = async (status, id) => {
-        console.log(status, id)
         const res = await axiosSecure.put(`/change-class-status/${id}`, {status})
         if(res.data.modifiedCount > 0) {
             Swal.fire({

@@ -27,8 +27,8 @@ const DashboardLayout = () => {
         />
         <div className="flex gap-x-4 items-center ">
           <img
-            src="/logo.svg"
-            className={`cursor-pointer`}
+            src="/instro.png"
+            className="cursor-pointer w-[60px]"
           />
           <h1
             className={` origin-left font-medium text-xl duration-200 ${
