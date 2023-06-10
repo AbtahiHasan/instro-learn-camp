@@ -9,7 +9,6 @@ const ManageUsers = () => {
     const {refetchUser, users} = useUsers()
     const {axiosSecure} = useAxiosSecure()
     const updateUserRole = async (role, id) => {
-        console.log(role, id)
         const res = await axiosSecure.put(`/change-user-role/${id}`, {role})
         if(res.data.modifiedCount > 0) {
             Swal.fire({
