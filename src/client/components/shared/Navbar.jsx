@@ -38,7 +38,7 @@ const Navbar = () => {
                 </span>
                 <ul 
                   
-                className={`flex items-center duration-200 z-50 flex-col py-5 lg:p-0 bg-opacity-80 top-14 bg-black lg:bg-transparent w-full lg:w-auto lg:flex-row gap-3 absolute lg:static ${toggle ? "left-0" : "-left-full"}`}>
+                className={`flex items-center duration-200 z-50 flex-col py-5 lg:p-0 top-16 bg-black lg:bg-transparent w-full lg:w-auto lg:flex-row gap-3 absolute lg:static ${toggle ? "left-0" : "-left-full"}`}>
                     <motion.li 
                     whileHover={{scale: 1.1}}
                     transition={{type: "spring", stiffness: 120}}
