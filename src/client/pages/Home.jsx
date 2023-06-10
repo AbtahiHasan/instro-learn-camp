@@ -2,7 +2,6 @@ import useTitle from "../../hooks/useTitle";
 import Banner from "../components/Banner";
 import GetUpdated from "../components/GetUpdated";
 import PopularClasses from "../components/PopularClasses";
-
 import PopullarInstructors from "../components/PopularInstructors";
 import WhyChoose from "../components/WhyChoose";
 

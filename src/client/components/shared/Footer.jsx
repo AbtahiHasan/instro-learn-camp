@@ -27,7 +27,7 @@ const Footer = () => {
                   <li>
                     <Link
                       to="/"
-                      className="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose"
+                      className="text-body-color hover:text-main mb-2 inline-block text-base leading-loose"
                     >
                       
                     Home
@@ -36,7 +36,7 @@ const Footer = () => {
                   <li>
                     <Link
                       to="/blog"
-                      className="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose"
+                      className="text-body-color hover:text-main mb-2 inline-block text-base leading-loose"
                     >
                        Blog
                     </Link>
@@ -44,7 +44,7 @@ const Footer = () => {
                   <li>
                     <Link
                       to="/login"
-                      className="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose"
+                      className="text-body-color hover:text-main mb-2 inline-block text-base leading-loose"
                     >
                       Login
                     </Link>
@@ -52,7 +52,7 @@ const Footer = () => {
                   <li>
                     <Link
                       to="/register"
-                      className="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose"
+                      className="text-body-color hover:text-main mb-2 inline-block text-base leading-loose"
                     >
                       Register
                     </Link>

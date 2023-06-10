@@ -13,11 +13,11 @@ const DashboardLayout = () => {
   const [open, setOpen] = useState(true);
   
   return (
-    <div className="flex">
+    <div className="flex h-screen overflow-hidden">
       <div
         className={` ${
           open ? "w-72" : "w-20 "
-        } bg-dark-purple h-screen p-5 border-r-2 pt-8 relative duration-300`}
+        } bg-dark-purple  p-5 border-r-2 pt-8 relative duration-300`}
       >
         <img
           src="/control.png"
