@@ -59,11 +59,7 @@ const SignUp = () => {
                 displayName: name,
                 photoURL: profileUrl
             }) 
-            console.log({
-                    name: name,
-                    email: email,
-                    photo_url: profileUrl
-                })
+            
             const user = {
                 name: name,
                 email: email,
@@ -71,7 +67,9 @@ const SignUp = () => {
             }
             axiosSecure.put(`/add-user?email=${user?.email}`, user)
                 .then(res => {
-                    if(res.data) {
+                    console.log(res)
+                    if(res.data) {                       
+                        
                         Swal.fire({
                             position: 'center',
                             icon: 'success',
@@ -79,14 +77,13 @@ const SignUp = () => {
                             showConfirmButton: false,
                             timer: 1500
                           })
-                        
-                        navigate("/")
-                        reset()
-                    }
-                })
+                          
+                        }
+                    })
+                    navigate("/")
                 
-
-           setSuccess("Registration successfull")
+                setSuccess("Registration successfull")
+                reset()
 
         }) 
         .catch(error => {
@@ -135,23 +132,23 @@ const SignUp = () => {
                 <form onSubmit={handleSubmit(hendleForm)}>
                     <div className='flex flex-col my-3'>
                         <label htmlFor="name">Name</label>
-                        <input type="text" name="name" {...register("name")} id="name" className='border-b-2 rounded w-full p-2 text-base outline-none' autoComplete='off' placeholder='Name' />
+                        <input type="text" {...register("name")} id="name" className='border-b-2 rounded w-full p-2 text-base outline-none' autoComplete='off' placeholder='Name' />
                     </div>
                     <div className='flex flex-col my-3'>
                         <label htmlFor="profile">Profile pic url</label>
-                        <input type="text" name="profile" {...register("profile", )} id="profile" className='border-b-2 w-full rounded p-2 text-base outline-none' autoComplete='off' placeholder='Profile pic url' />
+                        <input type="text" {...register("profile", )} id="profile" className='border-b-2 w-full rounded p-2 text-base outline-none' autoComplete='off' placeholder='Profile pic url' />
                     </div>
                     <div className='flex flex-col my-3'>
                         <label htmlFor="email">Email</label>
-                        <input type="email" name="email" {...register("email", {required: true})} id="email" className='border-b-2 w-full rounded p-2 text-base outline-none' autoComplete='off' placeholder='email' required/>
+                        <input type="email"  {...register("email", {required: true})} id="email" className='border-b-2 w-full rounded p-2 text-base outline-none' autoComplete='off' placeholder='email' required/>
                     </div>
                     <div className='flex flex-col my-3'>
                         <label htmlFor="password" >Password</label>
-                        <input type="password" name="password" {...register("password")} id="password" className='border-b-2 w-full rounded p-2 text-base outline-none' autoComplete='off' placeholder='password' />
+                        <input type="password"  {...register("password")} id="password" className='border-b-2 w-full rounded p-2 text-base outline-none' autoComplete='off' placeholder='password' />
                     </div> 
                     <div className='flex flex-col my-3'>
-                        <label htmlFor="password" >Confirm Password</label>
-                        <input type="password" name="password" {...register("confirm_password")} id="password" className='border-b-2 w-full rounded p-2 text-base outline-none' autoComplete='off' placeholder='password' />
+                        <label htmlFor="confirm_password" >Confirm Password</label>
+                        <input type="password" {...register("confirm_password")} id="confirm_password" className='border-b-2 w-full rounded p-2 text-base outline-none' autoComplete='off' placeholder='password' />
                     </div> 
                     <p className='text-[#da4747]'>{error && error}</p>
                     <p className='text-[#399d23]'>{success && success}</p>
