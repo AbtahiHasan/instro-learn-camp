@@ -10,8 +10,8 @@ const UserTable = ({user, i, deleteUser, updateUserRole}) => {
             <td className="py-2 text-center">{name}</td>
             <td className="py-2 text-center">{email}</td>
             <td>
-                <button onClick={() => updateUserRole("admin", _id)} disabled={role === "admin" || role === "instructor"} className={`${role === "admin" || role === "instructor" ? "opacity-25 cursor-not-allowed" : ""} bg-main px-6 py-2 rounded m-1 text-sm block mx-auto`}>Make Admin</button>
-                <button onClick={() => updateUserRole("instructor", _id)} disabled={role === "admin" || role === "instructor"} className={`${role === "admin" || role === "instructor" ? "opacity-25 cursor-not-allowed" : ""} bg-main px-6 py-2 rounded m-1 text-sm block mx-auto`}>Make Instructor</button>
+                <button onClick={() => updateUserRole("admin", _id)} disabled={role === "admin" } className={`${role === "admin"? "opacity-25 cursor-not-allowed" : ""} bg-main px-6 py-2 rounded m-1 text-sm block mx-auto`}>Make Admin</button>
+                <button onClick={() => updateUserRole("instructor", _id)} disabled={role === "instructor"} className={`${ role === "instructor" ? "opacity-25 cursor-not-allowed" : ""} bg-main px-6 py-2 rounded m-1 text-sm block mx-auto`}>Make Instructor</button>
             </td>
             <td className="py-2"><button onClick={() => deleteUser(_id)} className="bg-[#B91C1C] p-3 rounded text-white block mx-auto"><BsTrash3Fill/></button></td>
         </tr>

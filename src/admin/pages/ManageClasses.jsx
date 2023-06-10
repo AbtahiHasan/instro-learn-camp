@@ -58,8 +58,8 @@ const ManageClasses = () => {
                 <form onSubmit={sendFeedback}>
                     <textarea required name='feed' placeholder='write your feedback' className='w-full h-[220px] text-black bg-white resize-none outline-0 border-2 p-4 rounded'></textarea>
                     <div className='flex gap-3 justify-center'>
-                        <button className='bg-main px-4 py-2 rounded'>Send</button>
-                        <div onClick={() => setIsOpen(false)} className='bg-main px-4 py-2 rounded'>close</div>
+                        <button className='bg-main text-white px-4 py-2 rounded'>Send</button>
+                        <div onClick={() => setIsOpen(false)} className='bg-main cursor-pointer text-white px-4 py-2 rounded'>close</div>
                     </div>
                 </form>
             </div>

@@ -5,7 +5,7 @@ import { useAuth } from "../context/AuthProvider";
 const useUsers = () => {
     const {axiosSecure} = useAxiosSecure()
     const {loading} = useAuth()
-    const {data: users = []} = useQuery({
+    const {data: users = [], refetch} = useQuery({
         queryKey: ["users"],
         enabled: !loading,
         queryFn: async () => {
@@ -13,7 +13,7 @@ const useUsers = () => {
             return res.data
         }
     })
-    return {users}
+    return {users, refetch}
     
 };
 

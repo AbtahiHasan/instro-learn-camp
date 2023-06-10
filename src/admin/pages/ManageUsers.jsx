@@ -6,11 +6,12 @@ import useTitle from '../../hooks/useTitle';
 
 const ManageUsers = () => {
     useTitle("Manage Users")
-    const {refetchUser, users} = useUsers()
+    const {refetch, users} = useUsers()
     const {axiosSecure} = useAxiosSecure()
     const updateUserRole = async (role, id) => {
         const res = await axiosSecure.put(`/change-user-role/${id}`, {role})
         if(res.data.modifiedCount > 0) {
+            refetch()
             Swal.fire({
                 position: 'center',
                 icon: 'success',
@@ -34,7 +35,7 @@ const ManageUsers = () => {
                         axiosSecure.delete(`/delete-user/${id}`)
                         .then(data => {
                             if(data.data.deletedCount > 0) {
-                                refetchUser()
+                                refetch()
                                 Swal.fire(
                                         'Deleted!',
                                         'Your file has been deleted.',
