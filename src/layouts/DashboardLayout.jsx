@@ -35,7 +35,7 @@ const DashboardLayout = () => {
               !open && "scale-0"
             }`}
           >
-            {role}
+            {role || "Student"}
           </h1>
         </div>
         <ul className="pt-6">

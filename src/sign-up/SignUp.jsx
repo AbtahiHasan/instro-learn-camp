@@ -6,6 +6,7 @@ import useTitle from '../hooks/useTitle';
 import { useAuth } from '../context/AuthProvider';
 import { useForm } from 'react-hook-form';
 import useAxiosSecure from "../hooks/useAxiosSecure";
+import Swal from "sweetalert2";
     
     
 
@@ -57,14 +58,39 @@ const SignUp = () => {
             updateProfile(result.user, {
                 displayName: name,
                 photoURL: profileUrl
-            })
-           reset()
+            }) 
+            console.log({
+                    name: name,
+                    email: email,
+                    photo_url: profileUrl
+                })
+            const user = {
+                name: name,
+                email: email,
+                photo_url: profileUrl
+            }
+            axiosSecure.put(`/add-user?email=${user?.email}`, user)
+                .then(res => {
+                    if(res.data) {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Sign Up sucessfull',
+                            showConfirmButton: false,
+                            timer: 1500
+                          })
+                        
+                        navigate("/")
+                        reset()
+                    }
+                })
+                
 
            setSuccess("Registration successfull")
 
         }) 
         .catch(error => {
-            setError(error)
+            // setError(error)
         })
     }
 
@@ -105,7 +131,7 @@ const SignUp = () => {
            <section className='p-[25px] mt-20 w-full md:ml-auto md:w-1/2'>
                 <h2 className='text-3xl font-bold'>Create An Account</h2>
 
-                <p className='mt-[8px]'>Already have an account? <Link to="/login" className='text-main'>Login</Link></p>     
+                <p className='mt-[8px]'>Already have an account? <Link to="/login" className='text-main'>Login</Link> </p>    
                 <form onSubmit={handleSubmit(hendleForm)}>
                     <div className='flex flex-col my-3'>
                         <label htmlFor="name">Name</label>
