@@ -15,7 +15,7 @@ import Swal from 'sweetalert2';
 
 const Login = () => {
     useTitle("Login")
-    const [showPassword, setShowPassword] = useState(true)
+    const [showPassword, setShowPassword] = useState(false)
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/'
