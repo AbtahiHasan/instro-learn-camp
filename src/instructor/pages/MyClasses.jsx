@@ -1,7 +1,9 @@
 import useMyClasses from "../../hooks/useMyClasses";
+import useTitle from "../../hooks/useTitle";
 import ClassTable from "../components/ClassTable";
 
 const MyClasses = () => {
+    useTitle("My Classes")
     const {classes} = useMyClasses()
 
     return (

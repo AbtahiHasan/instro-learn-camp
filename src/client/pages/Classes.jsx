@@ -5,8 +5,10 @@ import useAxiosSecure from '../../hooks/useAxiosSecure';
 import { useAuth } from '../../context/AuthProvider';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 
 const Classes = () => {
+    useTitle("Classes")
     const {user} = useAuth()
     const {classes} = useClasses("approved")
     const navigate = useNavigate()

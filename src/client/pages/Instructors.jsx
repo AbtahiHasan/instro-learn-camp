@@ -1,8 +1,10 @@
 import React from 'react';
 import InstructorCard from '../components/InstructorCard';
 import useIntructors from '../../hooks/useIntructors';
+import useTitle from '../../hooks/useTitle';
 
 const Instructors = () => {
+    useTitle("Instructors")
     const {instructors} = useIntructors()
     return (
         <section className="container mt-[140px]">

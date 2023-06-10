@@ -2,12 +2,14 @@
 import { Link } from "react-router-dom";
 import EnrolledClassTable from "../components/EnrolledClassTable";
 import useEnrolledClasses from "../../hooks/useEnrolledClasses";
+import useTitle from "../../hooks/useTitle";
 
 
 const EnrolledClass = () => {
+    useTitle("Enrolled Class")
     const {enrolledClasses} = useEnrolledClasses()
 
-   console.log(enrolledClasses)
+
     return (
         <main className='h-screen overflow-hidden'>
         <section  className='h-[650px] mt-2 overflow-x-auto relative'>

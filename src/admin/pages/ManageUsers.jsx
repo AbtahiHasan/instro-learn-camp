@@ -2,8 +2,10 @@ import Swal from 'sweetalert2';
 import useUsers from '../../hooks/useUsers';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import UserTable from '../components/UserTable';
+import useTitle from '../../hooks/useTitle';
 
 const ManageUsers = () => {
+    useTitle("Manage Users")
     const {refetchUser, users} = useUsers()
     const {axiosSecure} = useAxiosSecure()
     const updateUserRole = async (role, id) => {

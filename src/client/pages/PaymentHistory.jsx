@@ -1,9 +1,11 @@
 import usePayment from "../../hooks/usePayment";
+import useTitle from "../../hooks/useTitle";
 import PaymentHistoryTable from "../components/PaymentHistoryTable";
 
 
 
-const SelectedClasses = () => {
+const PaymentHistory = () => {
+    useTitle("Payment History")
     const {paymentHistory} = usePayment()
 
     
@@ -32,4 +34,4 @@ const SelectedClasses = () => {
     );
 };
 
-export default SelectedClasses;
+export default PaymentHistory;

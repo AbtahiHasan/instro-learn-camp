@@ -5,8 +5,10 @@ import UserTable from '../components/UserTable';
 import useClasses from '../../hooks/useClasses';
 import ClassTable from '../components/ClassTable';
 import { useState } from 'react';
+import useTitle from '../../hooks/useTitle';
 
 const ManageClasses = () => {
+    useTitle("Manage Classes")
     const { classes} = useClasses("all")
     const [isOpen, setIsOpen] = useState(false)
     const [id, setId] = useState(null)

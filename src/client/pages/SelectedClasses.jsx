@@ -3,9 +3,11 @@ import useAxiosSecure from "../../hooks/useAxiosSecure";
 import useSelectedClasses from "../../hooks/useSelectedClasses";
 import SelectedClassTable from "../components/SelectedClassTable";
 import { Link } from "react-router-dom";
+import useTitle from "../../hooks/useTitle";
 
 
 const SelectedClasses = () => {
+    useTitle("Selected Classes")
     const {selectedClasses, refetch} = useSelectedClasses()
     const {axiosSecure} = useAxiosSecure()
     const deleteSelectedClass = (id) => {        
